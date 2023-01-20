@@ -1,15 +1,16 @@
 import React from "react"
 import { Route, Routes, Navigate} from "react-router-dom"
-import { AuthPage } from "./pages/AuthPage"
-import { CreateClientPage } from "./pages/CreateClientPage"
-import { DetailClientPage } from "./pages/DetailClientPage"
-import { ClientsPage } from "./pages/ClientsPage"
-import { CreateCarPage } from "./pages/CreateCarPage"
-import { CarsPage } from "./pages/CarsPage"
-import { DetailCarPage } from "./pages/DetailCarPage"
-import { CreateOrderPage } from "./pages/CreateOrderPage"
-import { OrdersPage } from "./pages/OrdersPage"
-import { DetailOrderPage } from "./pages/DetailOrderPage"
+import { AuthPage } from "./pages/authPage/AuthPage"
+import { CreateClientPage } from "./pages/clientsPage/CreateClientPage"
+import { DetailClientPage } from "./pages/clientsPage/DetailClientPage"
+import { ClientsPage } from "./pages/clientsPage/ClientsPage"
+import { CreateCarPage } from "./pages/carsPages/CreateCarPage"
+import { CarsPage } from "./pages/carsPages/CarsPage"
+import { DetailCarPage } from "./pages/carsPages/DetailCarPage"
+import { CreateOrderPage } from "./pages/orderPages/CreateOrderPage"
+import { OrdersPage } from "./pages/orderPages/OrdersPage"
+import { DetailOrderPage } from "./pages/orderPages/DetailOrderPage"
+import { Home } from "./pages/Home"
 
 export const useRoutes = isAuthenticated => {
     if (isAuthenticated) {
@@ -24,7 +25,8 @@ export const useRoutes = isAuthenticated => {
                 <Route path="/detail/:id" element={<DetailClientPage/>}/>
                 <Route path="/detailCar/:id" element={<DetailCarPage/>}/>
                 <Route path="/order/:id" element={<DetailOrderPage/>}/>
-                <Route path="*" element={ <Navigate to="/create"/>}/>
+                <Route path="/" element={<Home/>}/>
+                <Route path="*" element={ <Navigate to="/"/>}/>
             </Routes>
         )
     }

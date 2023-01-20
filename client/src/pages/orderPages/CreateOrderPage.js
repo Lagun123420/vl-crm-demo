@@ -1,9 +1,9 @@
 // import { request } from "express"
 import React, {Component, useCallback, useContext, useEffect, useState} from "react"
 import { useNavigate } from "react-router-dom"
-import { Loader } from "../components/Loader"
-import { AuthContext } from "../context/AuthContext"
-import {useHttp} from '../hooks/http.hook'
+import { Loader } from "../../components/Loader"
+import { AuthContext } from "../../context/AuthContext"
+import {useHttp} from '../../hooks/http.hook'
 
 
 export const CreateOrderPage = () => {
@@ -25,6 +25,7 @@ export const CreateOrderPage = () => {
 
     const [order, setOrder] = useState({
         // number: '',
+        status: 'New order',
         worksList: '',
         partsList: '',
         worksSum: '',

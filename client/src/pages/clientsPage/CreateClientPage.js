@@ -1,8 +1,8 @@
 // import { request } from "express"
 import React, {useContext, useEffect, useState} from "react"
 import { useNavigate } from "react-router-dom"
-import { AuthContext } from "../context/AuthContext"
-import {useHttp} from '../hooks/http.hook'
+import { AuthContext } from "../../context/AuthContext"
+import {useHttp} from '../../hooks/http.hook'
 
 
 export const CreateClientPage = () => {

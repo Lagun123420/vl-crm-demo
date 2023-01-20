@@ -1,8 +1,8 @@
 // import { request } from "express"
 import React, {useCallback, useContext, useEffect, useState} from "react"
 import { useNavigate } from "react-router-dom"
-import { AuthContext } from "../context/AuthContext"
-import {useHttp} from '../hooks/http.hook'
+import { AuthContext } from "../../context/AuthContext"
+import {useHttp} from '../../hooks/http.hook'
 
 
 export const CreateCarPage = () => {
@@ -53,19 +53,19 @@ export const CreateCarPage = () => {
         try {
             const data = await request('/api/car/create-car/', "POST", {...car}, {Authorization: `Bearer ${auth.token}`})
             navigate(`/cars`)
-        } catch (error) {
+            } catch (error) {
         }
     }
 
     return (
-        <div className="row wrapper">
-            {/* <form className='col s12'> */}
-            <form>
-            {/* <div className="col s8 offset-s4"> */}
-            <div>
+        <div className="row">
+            <form className='col s12'>
+            {/* <form> */}
+                <div className="col s8 offset-s2">
+            {/* <div> */}
                     <h1>Create Car</h1>
                 </div>
-                <div style={{paddingTop: '2rem', paddingBottom: '2rem'}}>
+                <div className="col s8 offset-s2" style={{paddingTop: '2rem', paddingBottom: '2rem'}}>
                     <label>Client</label>
                     <select className="browser-default" defaultValue="DEFAULT" onChange={selectClient}>
                         <option value="DEFAULT" disabled={true} >Select client</option>

@@ -1,6 +1,7 @@
 import React from "react";
 
 export const CarCard = ({car, deleteCar}) => {
+    
     return(
         <>
             <div className="container">
@@ -8,8 +9,8 @@ export const CarCard = ({car, deleteCar}) => {
                 <div className="col s8">
                     <div className="card blue darken-1">
                         <div className="card-content white-text">
-                            <span className="card-title">{car.carMark}</span>
-
+                            <span className="card-title small">{car.carMark}</span>
+                            
                             <table>
                                 <tbody>
                                     <tr>

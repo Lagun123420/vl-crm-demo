@@ -7,6 +7,7 @@ const router = Router()
 router.post('/create-order', auth, async (req, res) => {
     try {
         const {
+            status,
             number,
             worksList,
             partsList,
@@ -35,6 +36,7 @@ router.post('/create-order', auth, async (req, res) => {
 
         const order = new Order({
             number: number,
+            status: status,
             worksList,
             partsList,
             worksSum: worksSum,
@@ -59,9 +61,22 @@ router.post('/create-order', auth, async (req, res) => {
     }
 })
 
-router.get('/', auth, async (req, res) => {
+router.put('/change-status', auth, async (req, res) => {
     try {
-        const orders = await Order.find({owner: req.user.userId})    
+        let id = req.body['id']// id value
+        let status = req.body['status']// status value
+        const order = await Order.findByIdAndUpdate(id, {status: status})
+        res.status(200).json({message: 'Status was updated'})
+    } catch (e) {
+        res.status(500).json({message: `Some server error... ${e}`})
+    }
+})
+
+router.get('/', auth, async (req, res) => {
+    let filter = '';
+        
+    try {
+        const orders = await Order.find({owner: req.user.userId, clientName: {$regex: `${filter}`} })
         res.json(orders)
     } catch (e) {
         res.status(500).json({message: 'Some server error...'})

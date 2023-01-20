@@ -1,7 +1,31 @@
-import React from "react";
-// import { json } from "react-router-dom";
+// import { response } from "express";
+import React, { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { useHttp } from "../hooks/http.hook";
+import { useMessage } from "../hooks/message.hook";
 
 export const OrderCard = ({order, deleteOrder}) => {
+    const auth = useContext(AuthContext)
+    const {request} = useHttp()
+    const message = useMessage()
+
+    const changeStatusHandler = async (e) => {
+        let status = e.target.value
+        let id = order._id
+        let messageConfirm = window.confirm('Confirm your order status change');
+        
+        if (messageConfirm) {
+            try {
+                const data = await request('/api/order/change-status/', "PUT", {id, status}, {Authorization: `Bearer ${auth.token}`})
+                message(data.message)
+                order.status = status
+            } catch (error) {
+                message(error)
+                console.log(error)
+            }
+        } else {message('Status is not changed!')}
+    }
+
     return(
         <div className="row">
             <div className="col s4">
@@ -9,11 +33,26 @@ export const OrderCard = ({order, deleteOrder}) => {
                     <div className="col s12">
                         <div className="card blue darken-1">
                             <div className="card-content white-text">
+                                <div className="input-field">
+                                    <select className="browser-default " defaultValue={"DEFAULT"} onChange={changeStatusHandler}>
+                                        <option value={"DEFAULT"} disabled>Change Status</option>
+                                        <option value="New order">New order</option>
+                                        <option value="Coordination">Coordination</option>
+                                        <option value="In operation">In operation</option>
+                                        <option value="Waiting for payment">Waiting for payment</option>
+                                        <option value="Ready">Ready</option>
+                                        <option value="Closed">Closed</option>
+                                    </select>
+                                </div>
                                 <span className="card-title">{order.clientName}</span>
                                 <table>
                                     <tbody>
                                         <tr>
-                                            <td><span>Contacts : </span></td>
+                                            <td><span>Order status</span></td>
+                                            <td><span className="red-text lighten-1" style={{fontWeight: 700}}>{order.status}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span>Contacts</span></td>
                                             <td><span>{order.clientPhone}</span></td>
                                         </tr>
                                         <tr>
@@ -26,12 +65,12 @@ export const OrderCard = ({order, deleteOrder}) => {
                                         </tr>
                                         <tr>
                                             <td><span>Odometr</span></td>
-                                            <td><span>{order.carodometr}</span></td>
+                                            <td><span>{order.carOdometr}</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
                                 <span>Recomendation : </span>
-                                <p style={{maxWidth: 150}}>{order.worksRecomendation}</p>
+                                <p>{order.worksRecomendation}</p>
                             </div>
                             
                             <div className="card-action">
@@ -88,7 +127,6 @@ export const OrderCard = ({order, deleteOrder}) => {
 
                         <tbody id='partsList'>
                             {Object.values(order.partsList[0]).map((partsLine, index) => {
-                                console.log(partsLine.number)
                                 return (
                                     <tr>
                                         <td>{partsLine.number}</td>

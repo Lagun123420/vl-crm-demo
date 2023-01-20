@@ -3,6 +3,7 @@ const {Schema, model, Types} = require('mongoose')
 const schema = new Schema({
     
     // number: {type: String},
+    status: {type: String},
     worksList: {type: Array},
     partsList: {type: Array},
     worksSum: {type: Number},

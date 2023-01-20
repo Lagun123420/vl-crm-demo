@@ -1,8 +1,9 @@
 import React, { useCallback, useContext, useEffect, useState } from "react"
-import {useHttp} from "../hooks/http.hook"
-import {AuthContext} from "../context/AuthContext"
-import { Loader } from "../components/Loader"
-import { OrdersList } from "../components/OrdersList"
+import {useHttp} from "../../hooks/http.hook"
+import {AuthContext} from "../../context/AuthContext"
+import { Loader } from "../../components/Loader"
+import { OrdersList } from "../../components/OrdersList"
+import { SearchOrders } from "../../components/SearchOrders"
 
 export const OrdersPage = () => {
     const [orders, setOrders] = useState([])
@@ -53,7 +54,8 @@ export const OrdersPage = () => {
             <div>
                 <h1>Orders Page</h1>
             </div>
-            {!loading && <OrdersList orders = {orders} />}
+
+                {!loading && <OrdersList orders = {orders}/>}
         </div>
     )
 }

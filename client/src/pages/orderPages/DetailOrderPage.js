@@ -1,10 +1,10 @@
 import React, { useCallback, useContext, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 // import { CarCard } from "../components/CarCard"
-import { Loader } from "../components/Loader"
-import { OrderCard } from "../components/OrderCard"
-import { AuthContext } from "../context/AuthContext"
-import { useHttp } from "../hooks/http.hook"
+import { Loader } from "../../components/Loader"
+import { OrderCard } from "../../components/OrderCard"
+import { AuthContext } from "../../context/AuthContext"
+import { useHttp } from "../../hooks/http.hook"
 
 export const DetailOrderPage = () => {
     const navigate = useNavigate()

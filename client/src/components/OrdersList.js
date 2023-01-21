@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { SearchOrders } from "./SearchOrders";
 
 export const OrdersList = ({orders, fetchOrders}) => {
+    const [filter, setFilter] = useState('')
+    const [typeFilter, setTypeFilter] = useState('clientName')
     if (!orders.length) {
         return (
             <>
@@ -13,16 +15,40 @@ export const OrdersList = ({orders, fetchOrders}) => {
         )
     }
 
-    // console.log(Object(orders).map)
+    // console.log(Object(orders).map((order, index) => {console.log(order.carMark)}))
+    // console.log(orders[0].find({clientName: {$regex: `${filter}`} }}));
+    // let filter = 'Вадим'
+
+    const changeHandlerFilter = event => {
+        setFilter(event.target.value)
+    }
+
+    const changeHandlerTypeFilter = event => {
+        setTypeFilter(event.target.value)
+        // console.log(orders)
+    }
+
+    console.log(orders)
 
     return(
         <>
             <div className="row">
+                
+                <div className="input-field col s4">
+                    <select className="browser-default " defaultValue={"DEFAULT"} onChange={changeHandlerTypeFilter}>
+                        <option value={"DEFAULT"} disabled>Select search type</option>
+                        <option value="clientName">Client name</option>
+                        <option value="clientPhone">Client phone</option>
+                        <option value="carMark">Car mark</option>
+                        <option value="carModel">Car model</option>
+                        <option value="status">Oder status</option>
+                    </select>
+                    
+                </div>
                 <div className="input-field col s6">
                     <i className="material-icons prefix">search</i>
-                    <input id="icon_prefix" type="text" className="validate"/>
-                    <label for="icon_prefix">Search by phone</label>
-                    <button>Filter</button>
+                    <input id="icon_prefix" type="text" className="validate" onChange={changeHandlerFilter}/>
+                    <label for="icon_prefix">Search order</label>
                 </div>
             </div>
         
@@ -42,6 +68,16 @@ export const OrdersList = ({orders, fetchOrders}) => {
 
                 <tbody>
                     {orders.map((order, index) => {
+                        // let validFilter = order[typeFilter].toLowerCase().includes(filter.toLowerCase());  
+                        let validFilter = ''  
+                        if (typeFilter === 'clientPhone') {
+                            validFilter = order[typeFilter].toString().includes(filter);
+                        } else {
+                            validFilter = order[typeFilter].toLowerCase().includes(filter.toLowerCase());
+                        }
+                        
+                        // if (order[typeFilter].toLowerCase().includes(filter.toLowerCase())) {
+                        if (validFilter) {
                         return(
                             <tr key={order._id}>
                                 <td>{index + 1}</td>
@@ -61,7 +97,7 @@ export const OrdersList = ({orders, fetchOrders}) => {
                                 </td>
                                     <td><Link to={`/order/${order._id}`} className="waves-effect waves-light btn blue lighten-1">Open</Link></td>
                                 </tr>
-                            )
+                            )}
                         }
                     )}
                 </tbody>

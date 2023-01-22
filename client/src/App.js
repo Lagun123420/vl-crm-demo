@@ -6,7 +6,7 @@ import { AuthContext } from './context/AuthContext'
 import { Navbar } from './components/Navbar'
 import { Loader } from './components/Loader'
 import 'materialize-css'
-// import 'materialize.min.js'
+// import 'materialize.js'
 
 
 function App() {

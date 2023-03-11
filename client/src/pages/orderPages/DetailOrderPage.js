@@ -1,8 +1,8 @@
 import React, { useCallback, useContext, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 // import { CarCard } from "../components/CarCard"
-import { Loader } from "../../components/Loader"
-import { OrderCard } from "../../components/OrderCard"
+import { Loader } from "../../components/loader/Loader"
+import { OrderCard } from "../../components/orderCard/OrderCard"
 import { AuthContext } from "../../context/AuthContext"
 import { useHttp } from "../../hooks/http.hook"
 

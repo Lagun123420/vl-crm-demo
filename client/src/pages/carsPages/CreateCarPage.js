@@ -3,6 +3,7 @@ import React, {useCallback, useContext, useEffect, useState} from "react"
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
 import {useHttp} from '../../hooks/http.hook'
+import cl from './createCarPage.module.css'
 
 
 export const CreateCarPage = () => {
@@ -58,15 +59,20 @@ export const CreateCarPage = () => {
     }
 
     return (
-        <div className="row">
-            <form className='col s12'>
+        // <div className="row">
+        <div className={cl.container}>
+            {/* <form className='col s12'> */}
+            <form className=''>
             {/* <form> */}
-                <div className="col s8 offset-s2">
+                {/* <div className="col s8 offset-s2"> */}
+                <div className="">
             {/* <div> */}
-                    <h1>Create Car</h1>
+                    <div className={cl.title}>Create Car</div>
                 </div>
-                <div className="col s8 offset-s2" style={{paddingTop: '2rem', paddingBottom: '2rem'}}>
+                {/* <div className="col s8 offset-s2" style={{paddingTop: '2rem', paddingBottom: '2rem'}}> */}
+                <div className="" style={{paddingTop: '2rem', paddingBottom: '2rem'}}>
                     <label>Client</label>
+                    {/* <select className="browser-default" defaultValue="DEFAULT" onChange={selectClient}> */}
                     <select className="browser-default" defaultValue="DEFAULT" onChange={selectClient}>
                         <option value="DEFAULT" disabled={true} >Select client</option>
                         {clients.map((client, index) => {
@@ -76,7 +82,8 @@ export const CreateCarPage = () => {
                         })}
                     </select>                   
             
-                    <div className="input-field">
+                    {/* <div className="input-field"> */}
+                    <div className="">
                         <input 
                             id="carMark" 
                             type="text" 
@@ -85,7 +92,8 @@ export const CreateCarPage = () => {
                         />
                         <label htmlFor="carMark">Mark *</label>
                     </div>
-                    <div className="input-field">
+                    {/* <div className="input-field"> */}
+                    <div className="">
                         <input 
                             id="carModel" 
                             type="text" 
@@ -94,7 +102,8 @@ export const CreateCarPage = () => {
                         />
                         <label htmlFor="carModel">Model *</label>
                     </div>
-                    <div className="input-field">
+                    {/* <div className="input-field"> */}
+                    <div className="">
                         <input 
                             id="carYear" 
                             type="text" 
@@ -103,7 +112,8 @@ export const CreateCarPage = () => {
                         />
                         <label htmlFor="carYear">Year</label>
                     </div>
-                    <div className="input-field">
+                    {/* <div className="input-field"> */}
+                    <div className="">
                         <input 
                             id="carEngine" 
                             type="text" 
@@ -112,7 +122,8 @@ export const CreateCarPage = () => {
                         />
                         <label htmlFor="carEngine">Engine</label>
                     </div>
-                    <div className="input-field">
+                    {/* <div className="input-field"> */}
+                    <div className="">
                         <input 
                             id="carNumber" 
                             type="text" 
@@ -121,7 +132,8 @@ export const CreateCarPage = () => {
                         />
                         <label htmlFor="carNumber">Number</label>
                     </div>
-                    <div className="input-field">
+                    {/* <div className="input-field"> */}
+                    <div className="">
                         <input 
                             id="carVinCode" 
                             type="text" 
@@ -130,7 +142,8 @@ export const CreateCarPage = () => {
                         />
                         <label htmlFor="carVinCode">VinCode</label>
                     </div>
-                    <div className="input-field">
+                    {/* <div className="input-field"> */}
+                    <div className="">
                         <input 
                             id="carColor" 
                             type="text" 
@@ -139,9 +152,11 @@ export const CreateCarPage = () => {
                         />
                         <label htmlFor="carColor">Color</label>
                     </div>
-                    <div className="card-action">
+                    {/* <div className="card-action"> */}
+                    <div className={cl.action_buttons}>
                         <button 
-                            className='btn yellow darken-4' 
+                            // className='btn yellow darken-4' 
+                            className={cl.action_button} 
                             style={{marginRight:10}}
                             onClick={createHandler}
                         >Create Car</button>

@@ -1,8 +1,8 @@
 import React, { useCallback, useContext, useEffect, useState } from "react"
 import {useHttp} from "../../hooks/http.hook"
 import {AuthContext} from "../../context/AuthContext"
-import { Loader } from "../../components/Loader"
-import { CarsList } from "../../components/CarsList"
+import { Loader } from "../../components/loader/Loader"
+import { CarsList } from "../../components/carsList/CarsList"
 
 export const CarsPage = () => {
     const [cars, setCars] = useState([])

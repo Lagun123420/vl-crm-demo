@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import cl from './clientsList.module.css'
 
 export const ClientsList = ({clients}) => {
     if (!clients.length) {
@@ -29,7 +30,7 @@ export const ClientsList = ({clients}) => {
                         <td>{index + 1}</td>
                         <td>{client.firstName}</td>
                         <td>{client.phoneNumber}</td>
-                        <td><Link to={`/detail/${client._id}`}>Open</Link></td>
+                        <td className={cl.buttons}><Link className={cl.button_open} to={`/detail/${client._id}`}>Open</Link></td>
                     </tr>
                 )
             })}

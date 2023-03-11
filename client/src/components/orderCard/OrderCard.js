@@ -1,8 +1,9 @@
 // import { response } from "express";
 import React, { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
-import { useHttp } from "../hooks/http.hook";
-import { useMessage } from "../hooks/message.hook";
+import { AuthContext } from "../../context/AuthContext";
+import { useHttp } from "../../hooks/http.hook";
+import { useMessage } from "../../hooks/message.hook";
+import cl from "./orderCard.module.css"
 
 export const OrderCard = ({order, deleteOrder}) => {
     const auth = useContext(AuthContext)
@@ -27,8 +28,8 @@ export const OrderCard = ({order, deleteOrder}) => {
     }
 
     return(
-        <div className="row">
-            <div className="col s4">
+        <div className={cl.container}>
+            <div className={cl.containerCard}>
                 <div className="row">
                     <div className="col s12">
                         <div className="card blue darken-1">
@@ -49,7 +50,7 @@ export const OrderCard = ({order, deleteOrder}) => {
                                     <tbody>
                                         <tr>
                                             <td><span>Order status</span></td>
-                                            <td><span className="red-text lighten-1" style={{fontWeight: 700}}>{order.status}</span></td>
+                                            <td><span className={cl.statusTitle} style={{fontWeight: 700}}>{order.status}</span></td>
                                         </tr>
                                         <tr>
                                             <td><span>Contacts</span></td>
@@ -81,7 +82,7 @@ export const OrderCard = ({order, deleteOrder}) => {
                 </div>
             </div>
             
-            <div className="col s8">
+            <div className={cl.containerTables}>
                 <div style={{marginTop: 10}}>
                     <label htmlFor="workTableList">Works List</label>
                     <table id='workTableList'>

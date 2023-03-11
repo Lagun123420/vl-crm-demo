@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { CarCard } from "../../components/CarCard"
-import { Loader } from "../../components/Loader"
+import { CarCard } from "../../components/carCard/CarCard"
+import { Loader } from "../../components/loader/Loader"
 import { AuthContext } from "../../context/AuthContext"
 import { useHttp } from "../../hooks/http.hook"
 

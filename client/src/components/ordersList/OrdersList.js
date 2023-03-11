@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { SearchOrders } from "./SearchOrders";
+import { SearchOrders } from "../searchOrders/SearchOrders";
 
 export const OrdersList = ({orders, fetchOrders}) => {
     const [filter, setFilter] = useState('')

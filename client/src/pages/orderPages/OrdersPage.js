@@ -1,9 +1,9 @@
 import React, { useCallback, useContext, useEffect, useState } from "react"
 import {useHttp} from "../../hooks/http.hook"
 import {AuthContext} from "../../context/AuthContext"
-import { Loader } from "../../components/Loader"
-import { OrdersList } from "../../components/OrdersList"
-import { SearchOrders } from "../../components/SearchOrders"
+import { Loader } from "../../components/loader/Loader"
+import { OrdersList } from "../../components/ordersList/OrdersList"
+import { SearchOrders } from "../../components/searchOrders/SearchOrders"
 
 export const OrdersPage = () => {
     const [orders, setOrders] = useState([])

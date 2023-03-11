@@ -1,8 +1,9 @@
 import React, { useCallback, useContext, useEffect, useState } from "react"
 import {useHttp} from "../../hooks/http.hook"
 import {AuthContext} from "../../context/AuthContext"
-import { Loader } from "../../components/Loader"
-import { ClientsList } from "../../components/ClientsList"
+import { Loader } from "../../components/loader/Loader"
+import { ClientsList } from "../../components/clientList/ClientsList"
+import cl from './clientsPage.module.css'
 
 export const ClientsPage = () => {
     const [clients, setClients] = useState([])
@@ -30,9 +31,9 @@ export const ClientsPage = () => {
     }
 
     return (
-        <div className="wrapper">  
+        <div className={cl.container}>  
             <div className="col s8 offset-s2">
-                <h1>Clients Page</h1>
+                <div className={cl.title}>Clients Page</div>
             </div>
             {!loading && <ClientsList clients = {clients} />}
         </div>

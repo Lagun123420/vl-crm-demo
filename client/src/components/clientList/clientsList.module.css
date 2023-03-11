@@ -1,0 +1,11 @@
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button_open {
+    background-color: #42A5F5;
+    padding: 5px 14px 8px;
+    border-radius: 2px;
+    color: white;
+}

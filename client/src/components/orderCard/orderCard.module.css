@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.containerCard {
+    max-width: 320px;
+}
+
+.containerTables {
+    width: 600px;
+}
+
+.statusTitle {
+    color: white;
+    text-shadow: 0 0 3px black;
+}

@@ -1,8 +1,8 @@
 import React, { useCallback, useContext, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { ClientCard } from "../../components/ClientCard"
-import { CarsList } from "../../components/CarsList"
-import { Loader } from "../../components/Loader"
+import { ClientCard } from "../../components/clientCard/ClientCard"
+import { CarsList } from "../../components/carsList/CarsList"
+import { Loader } from "../../components/loader/Loader"
 import { AuthContext } from "../../context/AuthContext"
 import { useHttp } from "../../hooks/http.hook"
 

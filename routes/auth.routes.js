@@ -81,7 +81,9 @@ router.post(
             { expiresIn: '3h' }
         )
 
-        res.json({token, userId: user.id})
+        const tokenExpiresIn = new Date(new Date().setHours(new Date().getHours() + 3)).toISOString()
+
+        res.json({token, userId: user.id, tokenExp: tokenExpiresIn})
 
     } catch (e) {
         res.status(500).json({message: 'Some server error...'})

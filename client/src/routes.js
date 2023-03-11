@@ -10,7 +10,7 @@ import { DetailCarPage } from "./pages/carsPages/DetailCarPage"
 import { CreateOrderPage } from "./pages/orderPages/CreateOrderPage"
 import { OrdersPage } from "./pages/orderPages/OrdersPage"
 import { DetailOrderPage } from "./pages/orderPages/DetailOrderPage"
-import { Home } from "./pages/Home"
+import { Home } from "./pages/home/Home"
 
 export const useRoutes = isAuthenticated => {
     if (isAuthenticated) {

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { useHttp } from '../../hooks/http.hook';
 import { useMessage } from '../../hooks/message.hook';
+import cl from './AuthPage.module.css'
 
 export const AuthPage = () => {
     const auth = useContext(AuthContext)
@@ -37,27 +38,25 @@ export const AuthPage = () => {
     const loginHandler = async () => {
         try {
             const data = await request('/api/auth/login', "POST", {...form})
-            auth.login(data.token, data.userId)
+            auth.login(data.token, data.userId, data.tokenExp)
         } catch (error) {}
     }
 
     return (
-        <div className='row'>
+        <div className={cl.container}>
             <form className='col s12'>
                 <div className='col s6 offset-s3'>
-                    <h1>VLR CRM</h1>
-                    <div className="card blue darken-1">
-                        <div className="card-content white-text">
-                            <span className="card-title">Authorization</span>
+                    <div className={cl.titleLogo}>VLR CRM</div>
+                    <div className={cl.container_main}>
+                        <div className={cl.container_block}>
+                            <span className={cl.container_block_title}>Authorization</span>
                             <div>
-
                                 <div className="input-field">
                                     <input 
-                                        // placeholder="Enter email" 
                                         id="email" 
                                         type="text" 
                                         name='email'
-                                        className='yellow-input'
+                                        className=''
                                         onChange={changeHandler}
                                         value={form.email}
                                     />
@@ -66,11 +65,10 @@ export const AuthPage = () => {
 
                                 <div className="input-field">
                                     <input 
-                                        // placeholder="Enter password" 
                                         id="password" 
                                         type="password" 
                                         name='password'
-                                        className='yellow-input'
+                                        className=''
                                         onChange={changeHandler}
                                         value={form.password}
                                     />
@@ -79,16 +77,16 @@ export const AuthPage = () => {
 
                             </div>
                         </div>
-                        <div className="card-action">
+                        <div className={cl.action_buttons}>
                             <button 
-                                className='btn yellow darken-4' 
+                                className={cl.action_buttons_login} 
                                 style={{marginRight:10}}
                                 disabled={loading}
                                 onClick={loginHandler}
                             >login</button>
                             
                             <button 
-                                className='btn grey lighten-1 black-text'
+                                className={cl.action_buttons_register}
                                 onClick={registerHandler}
                                 disabled={loading }
                             >register</button>

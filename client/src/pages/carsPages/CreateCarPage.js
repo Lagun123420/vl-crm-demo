@@ -3,10 +3,14 @@ import React, {useCallback, useContext, useEffect, useState} from "react"
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
 import {useHttp} from '../../hooks/http.hook'
+import { useTranslation } from "react-i18next"
+
 import cl from './createCarPage.module.css'
 
 
 export const CreateCarPage = () => {
+    const {t} = useTranslation()
+
     const navigate = useNavigate()
     const auth = useContext(AuthContext)
     const {request} = useHttp()
@@ -67,14 +71,14 @@ export const CreateCarPage = () => {
                 {/* <div className="col s8 offset-s2"> */}
                 <div className="">
             {/* <div> */}
-                    <div className={cl.title}>Create Car</div>
+                    <div className={cl.title}>{t("Create Car")}</div>
                 </div>
                 {/* <div className="col s8 offset-s2" style={{paddingTop: '2rem', paddingBottom: '2rem'}}> */}
                 <div className="" style={{paddingTop: '2rem', paddingBottom: '2rem'}}>
-                    <label>Client</label>
+                    <label>{t("Client")}</label>
                     {/* <select className="browser-default" defaultValue="DEFAULT" onChange={selectClient}> */}
                     <select className="browser-default" defaultValue="DEFAULT" onChange={selectClient}>
-                        <option value="DEFAULT" disabled={true} >Select client</option>
+                        <option value="DEFAULT" disabled={true} >{t("Select client")}</option>
                         {clients.map((client, index) => {
                             return(
                                 <option key={client._id} value={index}>{client.firstName} {client.phoneNumber}</option>
@@ -90,7 +94,7 @@ export const CreateCarPage = () => {
                             name='carMark'
                             onChange={changeHandler}
                         />
-                        <label htmlFor="carMark">Mark *</label>
+                        <label htmlFor="carMark">{t("Mark")} *</label>
                     </div>
                     {/* <div className="input-field"> */}
                     <div className="">
@@ -100,7 +104,7 @@ export const CreateCarPage = () => {
                             name='carModel'
                             onChange={changeHandler}
                         />
-                        <label htmlFor="carModel">Model *</label>
+                        <label htmlFor="carModel">{t("Model")} *</label>
                     </div>
                     {/* <div className="input-field"> */}
                     <div className="">
@@ -110,7 +114,7 @@ export const CreateCarPage = () => {
                             name='carYear'
                             onChange={changeHandler}
                         />
-                        <label htmlFor="carYear">Year</label>
+                        <label htmlFor="carYear">{t("Year")}</label>
                     </div>
                     {/* <div className="input-field"> */}
                     <div className="">
@@ -120,7 +124,7 @@ export const CreateCarPage = () => {
                             name='carEngine'
                             onChange={changeHandler}
                         />
-                        <label htmlFor="carEngine">Engine</label>
+                        <label htmlFor="carEngine">{t("Engine")}</label>
                     </div>
                     {/* <div className="input-field"> */}
                     <div className="">
@@ -130,7 +134,7 @@ export const CreateCarPage = () => {
                             name='carNumber'
                             onChange={changeHandler}
                         />
-                        <label htmlFor="carNumber">Number</label>
+                        <label htmlFor="carNumber">{t("Number")}</label>
                     </div>
                     {/* <div className="input-field"> */}
                     <div className="">
@@ -140,7 +144,7 @@ export const CreateCarPage = () => {
                             name='carVinCode'
                             onChange={changeHandler}
                         />
-                        <label htmlFor="carVinCode">VinCode</label>
+                        <label htmlFor="carVinCode">{t("VinCode")}</label>
                     </div>
                     {/* <div className="input-field"> */}
                     <div className="">
@@ -150,7 +154,7 @@ export const CreateCarPage = () => {
                             name='carColor'
                             onChange={changeHandler}
                         />
-                        <label htmlFor="carColor">Color</label>
+                        <label htmlFor="carColor">{t("Color")}</label>
                     </div>
                     {/* <div className="card-action"> */}
                     <div className={cl.action_buttons}>
@@ -159,7 +163,7 @@ export const CreateCarPage = () => {
                             className={cl.action_button} 
                             style={{marginRight:10}}
                             onClick={createHandler}
-                        >Create Car</button>
+                        >{t("Create Car")}</button>
                     </div>
                 </div>
             </form>

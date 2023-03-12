@@ -1,0 +1,86 @@
+{
+    "text": "Some text",
+    "Create Client": "Create client",
+    "Clients List": "Clients list",
+    "Create Car": "Create car",
+    "Create Order": "Create order",
+    "Order List": "Orders list",
+    "Cars List": "Cars list",
+    "Logout": "Logout",
+
+    "Authorization": "Authorization",
+    "Email": "Email",
+    "Password": "Password",
+    "login": "login",
+    "register": "register",
+
+    "Cars Page": "Cars Page",
+
+    "Haven't cars": "Haven't cars",
+
+    "Mark": "Mark",
+    "Model": "Model",
+    "Year": "Year",
+    "Engine": "Engine",
+    "Number": "Number",
+    "VIN": "VIN",
+    "Color": "Color",
+    "Client": "Client",
+    "User": "User",
+    "Open": "Open",
+    "Reg Number": "Reg Number",
+
+    "Phone number": "Phone number",
+    "Delete Client": "Delete Client",
+
+    "Select client": "Select client",
+    "Select Car": "Select Car",
+
+    "Car Odometr": "Car Odometr",
+
+    "Works List": "Works List",
+    "Name": "Name",
+    "Time": "Time",
+    "Qty": "Qty",
+    "Cost": "Cost",
+    "Sum": "Sum",
+    "Create new line": "Create new line",
+    "Parts List": "Parts List",
+    "Numb": "Number",
+    "Parts Name": "Parts Name",
+    "Article": "Article",
+    "Recomendation": "Recomendation",
+
+    "VinCode": "VinCode",
+    "VIN code": "Vin code",
+
+    "Clients Page": "Clients Page",
+
+    "First name": "First name",
+    "Create": "Create",
+
+    "Delete Car": "Delete Car",
+
+    "Delete Order": "Delete Order",
+
+    "Order status": "Order status",
+    "Contacts": "Contacts",
+    "Change Status": "Change Status",
+    "New order": "New order",
+    "Coordination": "Coordination",
+    "In operation": "In operation",
+    "Waiting for payment": "Waiting for payment",
+    "Ready": "Ready",
+    "Closed": "Closed",
+
+    "Haven't orders": "Haven't orders",
+    "Select search type": "Select search type",
+    "Client name": "Client name",
+    "Client phone": "Client phone",
+    "Car mark": "Car mark",
+    "Car model": "Car model",
+    "Search order": "Search order",
+    "Date": "Date",
+
+    "Orders Page": "Orders Page"
+}

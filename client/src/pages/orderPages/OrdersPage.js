@@ -4,8 +4,11 @@ import {AuthContext} from "../../context/AuthContext"
 import { Loader } from "../../components/loader/Loader"
 import { OrdersList } from "../../components/ordersList/OrdersList"
 import { SearchOrders } from "../../components/searchOrders/SearchOrders"
+import { useTranslation } from "react-i18next"
 
 export const OrdersPage = () => {
+    const {t} = useTranslation()
+
     const [orders, setOrders] = useState([])
     const [clients, setClients] = useState([])
     const {loading, request} = useHttp()
@@ -52,7 +55,7 @@ export const OrdersPage = () => {
     return (
         <div className="wrapper">
             <div>
-                <h1>Orders Page</h1>
+                <h5>{t("Orders Page")}</h5>
             </div>
 
                 {!loading && <OrdersList orders = {orders}/>}

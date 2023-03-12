@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { SearchOrders } from "../searchOrders/SearchOrders";
+import { useTranslation } from "react-i18next";
 
 export const OrdersList = ({orders, fetchOrders}) => {
+    const {t} = useTranslation()
+
     const [filter, setFilter] = useState('')
     const [typeFilter, setTypeFilter] = useState('clientName')
     if (!orders.length) {
         return (
             <>
                 <div>
-                    <p>Haven't orders</p>
+                    <p>{t("Haven't orders")}</p>
                 </div>
             </>
         )
@@ -36,19 +39,19 @@ export const OrdersList = ({orders, fetchOrders}) => {
                 
                 <div className="input-field col s4">
                     <select className="browser-default " defaultValue={"DEFAULT"} onChange={changeHandlerTypeFilter}>
-                        <option value={"DEFAULT"} disabled>Select search type</option>
-                        <option value="clientName">Client name</option>
-                        <option value="clientPhone">Client phone</option>
-                        <option value="carMark">Car mark</option>
-                        <option value="carModel">Car model</option>
-                        <option value="status">Oder status</option>
+                        <option value={"DEFAULT"} disabled>{t("Select search type")}</option>
+                        <option value="clientName">{t("Client name")}</option>
+                        <option value="clientPhone">{t("Client phone")}</option>
+                        <option value="carMark">{t("Car mark")}</option>
+                        <option value="carModel">{t("Car model")}</option>
+                        <option value="status">{t("Order status")}</option>
                     </select>
                     
                 </div>
                 <div className="input-field col s6">
                     <i className="material-icons prefix">search</i>
                     <input id="icon_prefix" type="text" className="validate" onChange={changeHandlerFilter}/>
-                    <label for="icon_prefix">Search order</label>
+                    <label for="icon_prefix">{t("Search order")}</label>
                 </div>
             </div>
         
@@ -56,13 +59,13 @@ export const OrdersList = ({orders, fetchOrders}) => {
             <table>
                 <thead>
                     <tr>
-                        <th>Number</th>
-                        <th>Client name</th>
-                        <th>Client phone</th>
-                        <th>Car mark</th>
-                        <th>Car model</th>
-                        <th>Status</th>
-                        <th>Date</th>
+                        <th>{t("Number")}</th>
+                        <th>{t("Client name")}</th>
+                        <th>{t("Client phone")}</th>
+                        <th>{t("Car mark")}</th>
+                        <th>{t("Car model")}</th>
+                        <th>{t("Order status")}</th>
+                        <th>{t("Date")}</th>
                     </tr>
                 </thead>
 
@@ -85,7 +88,7 @@ export const OrdersList = ({orders, fetchOrders}) => {
                                 <td>{order.clientPhone}</td>
                                 <td>{order.carMark}</td>
                                 <td>{order.carModel}</td>
-                                <td className="red-text" >{order.status}</td>
+                                <td className="red-text" >{t(`${order.status}`)}</td>
                                 <td>
                                     <div>
                                         <span>{order.date.substr(0, 10)}</span>
@@ -95,7 +98,7 @@ export const OrdersList = ({orders, fetchOrders}) => {
                                     </div>
                                     
                                 </td>
-                                    <td><Link to={`/order/${order._id}`} className="waves-effect waves-light btn blue lighten-1">Open</Link></td>
+                                    <td><Link to={`/order/${order._id}`} className="waves-effect waves-light btn blue lighten-1">{t("Open")}</Link></td>
                                 </tr>
                             )}
                         }

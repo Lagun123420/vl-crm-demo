@@ -6,6 +6,7 @@ import { AuthContext } from "../../context/AuthContext"
 import { useHttp } from "../../hooks/http.hook"
 
 export const DetailCarPage = () => {
+
     const navigate = useNavigate()
     const {token} = useContext(AuthContext)
     const {request, loading} = useHttp()

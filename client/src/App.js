@@ -5,6 +5,8 @@ import { useAuth } from './hooks/auth.hook'
 import { AuthContext } from './context/AuthContext'
 import { Navbar } from './components/navbar/Navbar'
 import { Loader } from './components/loader/Loader'
+// import { useTranslation } from 'react-i18next'
+
 import 'materialize-css' 
 // import 'materialize.js'
 

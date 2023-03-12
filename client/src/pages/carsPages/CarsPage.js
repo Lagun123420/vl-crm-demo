@@ -3,8 +3,11 @@ import {useHttp} from "../../hooks/http.hook"
 import {AuthContext} from "../../context/AuthContext"
 import { Loader } from "../../components/loader/Loader"
 import { CarsList } from "../../components/carsList/CarsList"
+import { useTranslation } from "react-i18next"
 
 export const CarsPage = () => {
+    const { t } = useTranslation()
+
     const [cars, setCars] = useState([])
     const {loading, request} = useHttp()
     const {token} = useContext(AuthContext)
@@ -32,7 +35,7 @@ export const CarsPage = () => {
     return (
         <div className="row wrapper">
             <div>
-                <h1>Cars Page</h1>
+                <h5>{t("Cars Page")}</h5>
             </div>
             {!loading && <CarsList cars = {cars} />}
         </div>

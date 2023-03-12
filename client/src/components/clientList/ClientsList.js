@@ -1,13 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next"
 import cl from './clientsList.module.css'
 
+
 export const ClientsList = ({clients}) => {
+    const {t} = useTranslation()
+
     if (!clients.length) {
         return (
             <>
                 <div>
-                    <p>Haven't clients</p>
+                    <p>{t("Haven't clients")}</p>
                 </div>
             </>
         )
@@ -18,8 +22,8 @@ export const ClientsList = ({clients}) => {
         <thead>
           <tr>
               <th>№</th>
-              <th>First Name</th>
-              <th>Phone Number</th>
+              <th>{t("First name")}</th>
+              <th>{t("Phone number")}</th>
           </tr>
         </thead>
 
@@ -30,7 +34,7 @@ export const ClientsList = ({clients}) => {
                         <td>{index + 1}</td>
                         <td>{client.firstName}</td>
                         <td>{client.phoneNumber}</td>
-                        <td className={cl.buttons}><Link className={cl.button_open} to={`/detail/${client._id}`}>Open</Link></td>
+                        <td className={cl.buttons}><Link className={cl.button_open} to={`/detail/${client._id}`}>{t("Open")}</Link></td>
                     </tr>
                 )
             })}

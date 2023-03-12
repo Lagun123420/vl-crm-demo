@@ -2,9 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { useHttp } from '../../hooks/http.hook';
 import { useMessage } from '../../hooks/message.hook';
+import {useTranslation} from 'react-i18next'
+
 import cl from './AuthPage.module.css'
 
 export const AuthPage = () => {
+    const { t } = useTranslation();
+
     const auth = useContext(AuthContext)
     const message = useMessage()
     const {loading, error, request, clearError} = useHttp()
@@ -49,7 +53,7 @@ export const AuthPage = () => {
                     <div className={cl.titleLogo}>VLR CRM</div>
                     <div className={cl.container_main}>
                         <div className={cl.container_block}>
-                            <span className={cl.container_block_title}>Authorization</span>
+                            <span className={cl.container_block_title}>{t("Authorization")}</span>
                             <div>
                                 <div className="input-field">
                                     <input 
@@ -60,7 +64,7 @@ export const AuthPage = () => {
                                         onChange={changeHandler}
                                         value={form.email}
                                     />
-                                    <label htmlFor="email">Email</label>
+                                    <label htmlFor="email">{t("Email")}</label>
                                 </div>
 
                                 <div className="input-field">
@@ -72,7 +76,7 @@ export const AuthPage = () => {
                                         onChange={changeHandler}
                                         value={form.password}
                                     />
-                                    <label htmlFor="password">Password</label>
+                                    <label htmlFor="password">{t("Password")}</label>
                                 </div>
 
                             </div>
@@ -83,13 +87,13 @@ export const AuthPage = () => {
                                 style={{marginRight:10}}
                                 disabled={loading}
                                 onClick={loginHandler}
-                            >login</button>
+                            >{t("login")}</button>
                             
                             <button 
                                 className={cl.action_buttons_register}
                                 onClick={registerHandler}
                                 disabled={loading }
-                            >register</button>
+                            >{t("register")}</button>
                         </div>
                     </div>
                 </div>

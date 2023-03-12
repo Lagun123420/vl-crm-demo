@@ -5,8 +5,11 @@ import { CarsList } from "../../components/carsList/CarsList"
 import { Loader } from "../../components/loader/Loader"
 import { AuthContext } from "../../context/AuthContext"
 import { useHttp } from "../../hooks/http.hook"
+import { useTranslation } from "react-i18next"
 
 export const DetailClientPage = () => {
+    const {t} = useTranslation()
+
     const navigate = useNavigate()
     const {token} = useContext(AuthContext)
     const {request, loading} = useHttp()

@@ -1,7 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next"
 
 export const CarCard = ({car, deleteCar}) => {
-    
+    const {t} = useTranslation()
+
     return(
         <>
             <div className="container">
@@ -14,27 +16,27 @@ export const CarCard = ({car, deleteCar}) => {
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td><span>Model : </span></td>
+                                        <td><span>{t("Model")} : </span></td>
                                         <td><span>{car.carModel}</span></td>
                                     </tr>
                                     <tr>
-                                        <td><span>Year : </span></td>
+                                        <td><span>{t("Year")} : </span></td>
                                         <td><span>{car.carYear}</span></td>
                                     </tr>
                                     <tr>
-                                        <td><span>Engine : </span></td>
+                                        <td><span>{t("Engine")} : </span></td>
                                         <td><span>{car.carEngine}</span></td>
                                     </tr>
                                     <tr>
-                                        <td><span>Reg Number : </span></td>
+                                        <td><span>{t("Reg Number")} : </span></td>
                                         <td><span>{car.carNumber}</span></td>
                                     </tr>
                                     <tr>
-                                        <td><span>VIN code : </span></td>
+                                        <td><span>{t("VIN code")} : </span></td>
                                         <td><span>{car.carVinCode}</span></td>
                                     </tr>
                                     <tr>
-                                        <td><span>Color : </span></td>
+                                        <td><span>{t("Color")} : </span></td>
                                         <td><span>{car.carColor}</span></td>
                                     </tr>
                                 </tbody>
@@ -42,7 +44,7 @@ export const CarCard = ({car, deleteCar}) => {
                         </div>
 
                         <div className="card-action">
-                            <button className="waves-effect waves-light btn red lighten-1" onClick={deleteCar}>Delete Car</button>
+                            <button className="waves-effect waves-light btn red lighten-1" onClick={deleteCar}>{t("Delete Car")}</button>
                         </div>
                     </div>
                 </div>

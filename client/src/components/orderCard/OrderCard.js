@@ -3,9 +3,13 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useHttp } from "../../hooks/http.hook";
 import { useMessage } from "../../hooks/message.hook";
+import { useTranslation } from "react-i18next";
+
 import cl from "./orderCard.module.css"
 
 export const OrderCard = ({order, deleteOrder}) => {
+    const {t} = useTranslation()
+
     const auth = useContext(AuthContext)
     const {request} = useHttp()
     const message = useMessage()
@@ -36,46 +40,46 @@ export const OrderCard = ({order, deleteOrder}) => {
                             <div className="card-content white-text">
                                 <div className="input-field">
                                     <select className="browser-default " defaultValue={"DEFAULT"} onChange={changeStatusHandler}>
-                                        <option value={"DEFAULT"} disabled>Change Status</option>
-                                        <option value="New order">New order</option>
-                                        <option value="Coordination">Coordination</option>
-                                        <option value="In operation">In operation</option>
-                                        <option value="Waiting for payment">Waiting for payment</option>
-                                        <option value="Ready">Ready</option>
-                                        <option value="Closed">Closed</option>
+                                        <option value={"DEFAULT"} disabled>{t("Change Status")}</option>
+                                        <option value="New order">{t("New order")}</option>
+                                        <option value="Coordination">{t("Coordination")}</option>
+                                        <option value="In operation">{t("In operation")}</option>
+                                        <option value="Waiting for payment">{t("Waiting for payment")}</option>
+                                        <option value="Ready">{t("Ready")}</option>
+                                        <option value="Closed">{t("Closed")}</option>
                                     </select>
                                 </div>
                                 <span className="card-title">{order.clientName}</span>
                                 <table>
                                     <tbody>
                                         <tr>
-                                            <td><span>Order status</span></td>
-                                            <td><span className={cl.statusTitle} style={{fontWeight: 700}}>{order.status}</span></td>
+                                            <td><span>{t("Order status")}</span></td>
+                                            <td><span className={cl.statusTitle} style={{fontWeight: 700}}>{t(`${order.status}`)}</span></td>
                                         </tr>
                                         <tr>
-                                            <td><span>Contacts</span></td>
+                                            <td><span>{t("Contacts")}</span></td>
                                             <td><span>{order.clientPhone}</span></td>
                                         </tr>
                                         <tr>
-                                            <td><span>Mark</span></td>
+                                            <td><span>{t("Mark")}</span></td>
                                             <td><span>{order.carMark}</span></td>
                                         </tr>
                                         <tr>
-                                            <td><span>Model</span></td>
+                                            <td><span>{t("Model")}</span></td>
                                             <td><span>{order.carModel}</span></td>
                                         </tr>
                                         <tr>
-                                            <td><span>Odometr</span></td>
+                                            <td><span>{t("Car Odometr")}</span></td>
                                             <td><span>{order.carOdometr}</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <span>Recomendation : </span>
+                                <span>{t("Recomendation")} : </span>
                                 <p>{order.worksRecomendation}</p>
                             </div>
                             
                             <div className="card-action">
-                                <button className="waves-effect waves-light btn red lighten-1" onClick={deleteOrder}>Delete Order</button>
+                                <button className="waves-effect waves-light btn red lighten-1" onClick={deleteOrder}>{t("Delete Order")}</button>
                             </div>
                         </div>
                     </div>
@@ -84,16 +88,16 @@ export const OrderCard = ({order, deleteOrder}) => {
             
             <div className={cl.containerTables}>
                 <div style={{marginTop: 10}}>
-                    <label htmlFor="workTableList">Works List</label>
+                    <label htmlFor="workTableList">{t("Works List")}</label>
                     <table id='workTableList'>
                         <thead>
                             <tr>
-                                <th>Number</th>
-                                <th>Name</th>
-                                <th>Time</th>
-                                <th>Qty</th>
-                                <th>Cost</th>
-                                <th>Sum</th>
+                                <th>{t("Number")}</th>
+                                <th>{t("Name")}</th>
+                                <th>{t("Time")}</th>
+                                <th>{t("Qty")}</th>
+                                <th>{t("Cost")}</th>
+                                <th>{t("Sum")}</th>
                             </tr>
                         </thead>
 
@@ -113,16 +117,16 @@ export const OrderCard = ({order, deleteOrder}) => {
                         </tbody>
                     </table>
 
-                    <label htmlFor="partsTableList">Parts List</label>
+                    <label htmlFor="partsTableList">{t("Parts List")}</label>
                     <table id='partsTableList'>   
                         <thead>
                             <tr>
-                                <th>Number</th>
-                                <th>Parts Name</th>
-                                <th>Article</th>
-                                <th>Qty</th>
-                                <th>Cost</th>
-                                <th>Sum</th>
+                                <th>{t("Number")}</th>
+                                <th>{t("Parts Name")}</th>
+                                <th>{t("Article")}</th>
+                                <th>{t("Qty")}</th>
+                                <th>{t("Cost")}</th>
+                                <th>{t("Sum")}</th>
                             </tr>
                         </thead>
 

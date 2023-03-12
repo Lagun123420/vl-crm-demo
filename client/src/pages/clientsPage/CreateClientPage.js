@@ -3,9 +3,11 @@ import React, {useContext, useEffect, useState} from "react"
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
 import {useHttp} from '../../hooks/http.hook'
+import { useTranslation } from "react-i18next"
 
 
 export const CreateClientPage = () => {
+    const {t} = useTranslation()
     const navigate = useNavigate()
     const auth = useContext(AuthContext)
     const {request} = useHttp()
@@ -36,7 +38,7 @@ export const CreateClientPage = () => {
         <div className="row">
             <form className='col s12'>
                 <div className="col s8 offset-s2">
-                    <h1>Create Client</h1>
+                    <h5>{t("Create Client")}</h5>
                 </div>
                 <div className="col s8 offset-s2" style={{paddingTop: '2rem'}}>
                         <div className="input-field">
@@ -47,7 +49,7 @@ export const CreateClientPage = () => {
                                 name='firstName'
                                 onChange={changeHandler}
                             />
-                            <label htmlFor="firstName">First name</label>
+                            <label htmlFor="firstName">{t("First name")}</label>
                         </div>
                         <div className="input-field">
                             <input 
@@ -58,7 +60,7 @@ export const CreateClientPage = () => {
                                 // className='yellow-input'
                                 onChange={changeHandler}
                             />
-                            <label htmlFor="phoneNumber">Phone Number</label>
+                            <label htmlFor="phoneNumber">{t("Phone number")}</label>
                         </div>
                         <div className="card-action">
                             <button 
@@ -66,7 +68,7 @@ export const CreateClientPage = () => {
                                 style={{marginRight:10}}
                                 // disabled={loading}
                                 onClick={createHandler}
-                            >Create</button>
+                            >{t("Create")}</button>
                         </div>
                 </div>
             </form>

@@ -1,0 +1,88 @@
+{
+    "text": "Якийсь текст",
+    "Create Client": "Новий клієнт",
+    "Clients List": "Список клієнтів",
+    "Create Car": "Створити автомобіль",
+    "Create Order": "Створити замовлення",
+    "Order List": "Список замовлень",
+    "Cars List": "Список автомобілів",
+    "Logout": "Вийти",
+
+    "Authorization": "Авторизація",
+    "Email": "Введіть поштову адресу",
+    "Password": "Введіть пароль",
+    "login": "Увійти",
+    "register": "Зареєструватися",
+
+    "Cars Page": "Список автомобілів",
+
+    "Haven't cars": "Автомобілі не знайдені...",
+
+    "Mark": "Марка",
+    "Model": "Модель",
+    "Year": "Рік",
+    "Engine": "Об'єм двигуна",
+    "Number": "Держ. номер",
+    "VIN": "VIN код",
+    "Color": "Колір",
+    "Client": "Клієнт",
+    "User": "Користувач",
+    "Open": "Відкрити",
+    "Reg Number": "Держ. номер",
+
+    "Phone number": "Номер телефону",
+    "Delete Client": "Видалити клієнта",
+
+    "Select client": "Вибреріть клієнта",
+    "Select Car": "Вибреріть автомобіль",
+
+    "Car Odometr": "Пробіг авто",
+
+    "Works List": "Список робіт",
+    "Name": "Ім'я",
+    "Time": "Робото-час",
+    "Qty": "Кількість",
+    "Cost": "Вартість",
+    "Sum": "Сума",
+    "Create new line": "Створити новий рядок",
+    "Parts List": "Список запчастин",
+    "Numb": "Номер",
+    "Parts Name": "Назва запчастини",
+    "Article": "Артикул",
+    "Recomendation": "Рекомендації",
+
+    "VinCode": "Номер шасі",
+    "VIN code": "Номер шасі",
+
+    "Clients Page": "Сторінка клієнтів",
+
+    "First name": "Ім'я клієнта",
+    "Create": "Створити",
+
+    "Delete Car": "Видалити авто",
+
+    "Delete Order": "Видалити замовлення",
+
+    "Order status": "Статус замовлення",
+    "Contacts": "Контакти",
+    "Change Status": "Змінити статус",
+    "New order": "Новий",
+    "Coordination": "Узгодження",
+    "In operation": "В роботі",
+    "Waiting for payment": "Чекає оплати",
+    "Ready": "Готовий",
+    "Closed": "Завершений",
+
+    "Haven't orders": "Замовлення не знайдені",
+    "Select search type": "Виберіть критерій пошуку",
+    "Client name": "Ім'я клієнта",
+    "Client phone": "Номер телефону",
+    "Car mark": "Марка авто",
+    "Car model": "Модель авто",
+    "Search order": "Шукати замовлення",
+    "Date": "Дата створення",
+
+    "Orders Page": "Сторінка замовлень"
+
+
+}

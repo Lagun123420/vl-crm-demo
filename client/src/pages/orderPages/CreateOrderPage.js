@@ -4,9 +4,12 @@ import { useNavigate } from "react-router-dom"
 import { Loader } from "../../components/loader/Loader"
 import { AuthContext } from "../../context/AuthContext"
 import {useHttp} from '../../hooks/http.hook'
+import { useTranslation } from "react-i18next"
 
 
 export const CreateOrderPage = () => {
+    const {t} = useTranslation()
+
     const navigate = useNavigate()
     const auth = useContext(AuthContext)
     const {request} = useHttp()
@@ -304,12 +307,12 @@ export const CreateOrderPage = () => {
         <div className="row">
             <form className='col s12'>
                 <div className="col s8 offset-s2">
-                    <h1>Create Order</h1>
+                    <h5>{t("Create Order")}</h5>
                 </div>
                 <div className="col s8 offset-s2">
-                    <label>Select Client</label>
+                    <label>{t("Select client")}</label>
                     <select className="browser-default" defaultValue={"DEFAULT"} onChange={selectClient}>
-                        <option disabled value={"DEFAULT"}>Select client</option>
+                        <option disabled value={"DEFAULT"}>{t("Select client")}</option>
                         {clients.map((client, index) => {
                             return(
                                 <option key={client._id} value={index}>{client.firstName} {client.phoneNumber}</option>
@@ -319,9 +322,9 @@ export const CreateOrderPage = () => {
                 </div>
                 {selectedClient && cars &&
                 <div className="col s8 offset-s2">
-                    <label>Select Car</label>
+                    <label>{t("Select Car")}</label>
                     <select className="browser-default" defaultValue={"DEFAULT"} onChange={selectCar}>
-                        <option disabled value={"DEFAULT"}>Select car</option>
+                        <option disabled value={"DEFAULT"}>{t("Select Car")}</option>
                         {cars.map((car, index) => {
                             return(
                                 <option key={car._id} value={index}>{car.carMark} {car.carModel}</option>
@@ -338,19 +341,19 @@ export const CreateOrderPage = () => {
                             name='carOdometr'
                             onChange={changeHandler}
                         />
-                        <label htmlFor="carOdometr">Car Odometr</label>
+                        <label htmlFor="carOdometr">{t("Car Odometr")}</label>
                     </div>
                     
-                    <label htmlFor="workTableList">Works List</label>
+                    <label htmlFor="workTableList">{t("Works List")}</label>
                     <table id='workTableList'>
                         <thead>
                             <tr>
-                                <th>Number</th>
-                                <th>Name</th>
-                                <th>Time</th>
-                                <th>Qty</th>
-                                <th>Cost</th>
-                                <th>Sum</th>
+                                <th>{t("Numb")}</th>
+                                <th>{t("Name")}</th>
+                                <th>{t("Time")}</th>
+                                <th>{t("Qty")}</th>
+                                <th>{t("Cost")}</th>
+                                <th>{t("Sum")}</th>
                             </tr>
                         </thead>
 
@@ -363,19 +366,19 @@ export const CreateOrderPage = () => {
                             className="waves-effect waves-light btn-small" 
                             onClick={addNewWorkLine}
                             onSubmit={null}
-                            >Create new line</button>
+                            >{t("Create new line")}</button>
                     </div>
                 
-                    <label htmlFor="partsTableList">Parts List</label>
+                    <label htmlFor="partsTableList">{t("Parts List")}</label>
                     <table id='partsTableList'>   
                         <thead>
                             <tr>
-                                <th>Number</th>
-                                <th>Parts Name</th>
-                                <th>Article</th>
-                                <th>Qty</th>
-                                <th>Cost</th>
-                                <th>Sum</th>
+                                <th>{t("Numb")}</th>
+                                <th>{t("Parts Name")}</th>
+                                <th>{t("Article")}</th>
+                                <th>{t("Qty")}</th>
+                                <th>{t("Cost")}</th>
+                                <th>{t("Sum")}</th>
                             </tr>
                         </thead>
 
@@ -388,7 +391,7 @@ export const CreateOrderPage = () => {
                             id="addNewPartsLine" 
                             className="waves-effect waves-light btn-small" 
                             onClick={addNewPartsLine}
-                            >Create new line
+                            >{t("Create new line")}
                         </button>
                     </div>
 
@@ -400,14 +403,14 @@ export const CreateOrderPage = () => {
                             name='worksRecomendation'
                             onChange={changeHandler}
                         />
-                        <label htmlFor="worksRecomendation">Recomendation</label>
+                        <label htmlFor="worksRecomendation">{t("Recomendation")}</label>
                     </div>
                     <div className="card-action">
                         <button 
                             className='btn yellow darken-4' 
                             style={{marginRight:10}}
                             onClick={createHandler}
-                        >Create</button>
+                        >{t("Create")}</button>
                     </div>
                 </div>
             </form>

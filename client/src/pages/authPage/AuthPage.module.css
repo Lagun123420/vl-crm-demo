@@ -5,6 +5,19 @@
     /* margin-top: 10%; */
 }
 
+.container_lottie_walker {
+    display: flex;
+}
+
+.lottie_walker {
+    width: 100px;
+    position: relative;
+    animation-timing-function: linear;
+    animation-duration: 25s;
+    animation-name: slidein;
+    animation-iteration-count:infinite;
+}
+
 .titleLogo {
     font-size: 30px;
     color: #1E88E5;
@@ -60,3 +73,27 @@
     background-color: #4caf50;
     color: white;
 }
+
+@keyframes slidein {
+    0% {
+        margin-left: 0;
+    }
+  
+    50% {
+        margin-left: 70%;
+        transform: scale(1, 1);
+    }
+
+    50.1% {        
+        transform: scale(-1, 1);
+    }
+
+    99.9% {
+        transform: scale(-1, 1);
+    }
+
+    100% {
+        margin-left: 0;
+        transform: scale(1, 1);
+    }
+  }

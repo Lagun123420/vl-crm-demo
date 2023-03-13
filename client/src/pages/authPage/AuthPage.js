@@ -62,11 +62,16 @@ export const AuthPage = () => {
         <div className={cl.container}>
             <form className='col s12'>
                 <div className='col s6 offset-s3'>
-                    <Lottie 
-                        options={defaultOptions}
-                        height={100}
-                        width={100}
-                    />
+                    <div className={cl.container_lottie_walker}>
+                        <div className={cl.lottie_walker}>
+                            <Lottie 
+                                options={defaultOptions}
+                                height={100}
+                                width={100}
+                            />
+                        </div>
+                    </div>
+                    
                     <div className={cl.titleLogo}>VLR CRM</div>
                     <div className={cl.container_main}>
                         <div className={cl.container_block}>

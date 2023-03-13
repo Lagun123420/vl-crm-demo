@@ -4,6 +4,9 @@ import { useHttp } from '../../hooks/http.hook';
 import { useMessage } from '../../hooks/message.hook';
 import {useTranslation} from 'react-i18next'
 
+import Lottie from 'react-lottie';
+import animationData from '../../lotties/137560-sea-walk.json';
+
 import cl from './AuthPage.module.css'
 
 export const AuthPage = () => {
@@ -16,6 +19,15 @@ export const AuthPage = () => {
         email: '',
         password: ''
     })
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    };
 
     useEffect(() => {
         message(error)
@@ -50,6 +62,11 @@ export const AuthPage = () => {
         <div className={cl.container}>
             <form className='col s12'>
                 <div className='col s6 offset-s3'>
+                    <Lottie 
+                        options={defaultOptions}
+                        height={100}
+                        width={100}
+                    />
                     <div className={cl.titleLogo}>VLR CRM</div>
                     <div className={cl.container_main}>
                         <div className={cl.container_block}>
@@ -98,6 +115,10 @@ export const AuthPage = () => {
                     </div>
                 </div>
             </form>
+            
+            
+
+
         </div>
     )
 }

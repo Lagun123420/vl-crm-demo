@@ -86,8 +86,9 @@ export const OrderCard = ({order, deleteOrder}) => {
                 </div>
             </div>
             
-            <div className={cl.containerTables}>
-                <div style={{marginTop: 10}}>
+            <div className={cl.wrapperTables}>
+                {/* <div style={{marginTop: 10}}> */}
+                <div className={cl.containerTables}>
                     <label htmlFor="workTableList">{t("Works List")}</label>
                     <table id='workTableList'>
                         <thead>

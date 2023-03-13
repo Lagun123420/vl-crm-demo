@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { useTranslation } from "react-i18next";
+import cl from "./navbar.module.css"
 
 import M from 'materialize-css'
 import 'materialize-css'
@@ -40,13 +41,13 @@ export const Navbar = () => {
                     <Link to="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></Link>
                     <ul id="nav" className="right hide-on-med-and-down">
                         <li><Link to="/create">{t('Create Client')}</Link></li>
-                        <li><Link to="/clients">{t("Clients List")}</Link></li>
                         <li><Link to="/createcar">{t("Create Car")}</Link></li>
                         <li><Link to="/createOrder">{t("Create Order")}</Link></li>
+                        <li><Link to="/clients">{t("Clients List")}</Link></li>
                         <li><Link to="/orders">{t("Order List")}</Link></li>
                         <li><Link to="/cars">{t("Cars List")}</Link></li>
                         <li>
-                            <Link to="#" onClick={() => handleLanguageSwitch()}>{i18n.language === 'uk' ? 'EN' : 'UA'}</Link>
+                            <Link className={cl.buttonLng} to="#" onClick={() => handleLanguageSwitch()}>{i18n.language === 'uk' ? 'EN' : 'UA'}</Link>
                         </li>
                         <li><a href="/links" onClick={logoutHandler}>{t("Logout")}</a></li>
                     </ul>

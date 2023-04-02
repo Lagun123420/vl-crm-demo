@@ -82,5 +82,7 @@
     "Search order": "Search order",
     "Date": "Date",
 
-    "Orders Page": "Orders Page"
+    "Orders Page": "Orders Page",
+    "Incorrect email":"Incorrect email",
+    "Password (8 characters minimum)":"Password (8 characters minimum)"
 }

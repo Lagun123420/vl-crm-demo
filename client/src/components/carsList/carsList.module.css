@@ -1,0 +1,15 @@
+.wrapper_table {
+    overflow-x: auto;
+    border-top: 2px solid gray;
+}
+
+.wrapper_table table {
+    min-width: 800px;
+}
+
+@media (max-width: 1024px) {
+    .wrapper_table {
+        margin: 0 15px;
+        margin-top: 20px;
+    }   
+}

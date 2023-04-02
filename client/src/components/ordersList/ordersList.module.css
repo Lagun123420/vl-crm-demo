@@ -1,7 +1,35 @@
+.custom_select::-ms-expand {
+    display: none; /* убирает стрелку в IE 10 и более ранних версиях */
+}
+
+.custom_select {
+    appearance: none; /* убирает стрелку в Chrome и Safari */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    padding: 0.3em 1em;
+    border-radius: 0.4em;
+    border-color: #9e9e9e;
+    /* color:#9e9e9e; */
+}
+
+.row_searchModule {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
 .table_wrapper {
     overflow-x: auto;
 }
 
 .table_container {
     min-width: 800px;
+    border-top: 2px solid grey;
+}
+
+@media (max-width: 1024px) {
+    .table_wrapper {
+        margin: 0 15px;
+    }
 }

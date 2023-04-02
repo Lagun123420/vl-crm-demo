@@ -82,7 +82,10 @@
     "Search order": "Шукати замовлення",
     "Date": "Дата створення",
 
-    "Orders Page": "Сторінка замовлень"
+    "Orders Page": "Сторінка замовлень",
+
+    "Incorrect email":"Некоректна поштова адреса",
+    "Password (8 characters minimum)":"Пароль (мінімум 8 символів)"
 
 
 }

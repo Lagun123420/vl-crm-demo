@@ -3,25 +3,37 @@
     /* flex-direction: column; */
 }
 
-
-
 .containerCard {
     max-width: 320px;
 }
 
 .containerTables {
+    padding: 20px 0 0 20px;
     /* width: 800px; */
     /* min-width: 800px; */
+}
+.containerTables label {
+    padding: 0 10%;
+    margin-top: 10px;
+    font-size: 20px;
+    border-bottom: 2px solid #607d8b;
+    color: dimgray;
+    text-shadow: 0 1px 3px #607d8b;
+}
+
+.containerTables table {
+    margin-bottom: 10%;
 }
 
 @media (max-width: 1000px) {
     .container {
-        flex-direction: column;
+        display: block;
+        /* flex-direction: column; */
         /* overflow-x: auto; */
     }
 
     .containerTables {
-        border: 2px solid #1E88E5;
+        border: 2px solid #1e88e5;
         border-radius: 5px;
         padding: 10px;
         margin: 5px;
